@@ -1,0 +1,16 @@
+.wsc-page-title {
+    background: lightgray;
+    padding: 20px;
+    text-align: center;
+}
+
+.wsc-recent_news {
+    margin: 20px;
+    padding: 20px;
+    text-align: justify;
+}
+
+.wsc-image-and_facts {
+    margin: 10px;
+    padding: 10px;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Mission to Mars data and images </title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row wsc-page-title">
+            <div class="col-md-12">
+                <h1 class = "h1">Mission to Mars</h1>
+                <a class="btn btn-primary btn-lg active" href="/scrape" role="button" aria-pressed="true">Scrape New Data</a>
+            </div>
+        </div>
+        <div class="row wsc-recent_news">
+            <div class="col-md-12">
+                <h2 class="h2">{{data.nasa_mars_news.news_title}}</h2>
+                <p>{{data.nasa_mars_news.news_description}}</p>
+            </div>
+        </div>
+        <div class="row wsc-image-and_facts">
+            <div class="col-md-6">
+                <h2 class="h2">Feature Mars Image</h2>
+                <img class="img-fluid" src="{{data.jpl_mars_space_images}}" alt="Current feature mars image">
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="h3">Current Mars Weather</h3>
+                        <p>{{data.mars_weather}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="h3">Mars Facts</h3>
+                        {% autoescape false%}
+                        {{data.mars_facts}}
+                        {% endautoescape%}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="h2">Mars Hemispheres</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="{{data.mars_hemisphere[0].image_url}}" alt="Current feature mars image">
+                        <h3 class="h3">{{data.mars_hemisphere[0].title}}</h3>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="{{data.mars_hemisphere[1].image_url}}" alt="Current feature mars image">
+                        <h3 class="h3">{{data.mars_hemisphere[1].title}}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="{{data.mars_hemisphere[2].image_url}}" alt="Current feature mars image">
+                        <h3 class="h3">{{data.mars_hemisphere[2].title}}</h3>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="{{data.mars_hemisphere[3].image_url}}" alt="Current feature mars image">
+                        <h3 class="h3">{{data.mars_hemisphere[3].title}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
